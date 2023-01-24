@@ -1,0 +1,6 @@
+inp = input('Inserte una lista de países separados por coma (,): ')
+countries = map(lambda country: country.strip().title(), inp.split(','))
+countries = list(set(countries))
+countries.sort()
+message = ','.join(countries)
+print(message)
