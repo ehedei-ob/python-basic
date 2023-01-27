@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Directors {% endblock %}
+
+{% block header-title %} Directors {% endblock %}
+
+{% block content %}
+<div class="directors-cnt">
+    {% for director in object_list %}
+    <button onclick="window.location.href='/{{director.id}}'">{{ director }}</button>
+    {% empty %}
+    <em>Empty list</em>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Director - {{ director }} {% endblock %}
+
+{% block header-title %} {{ director }} {% endblock %}
+
+{% block content %}
+<h4>Birthdate:</h4>
+<p>{{ director.birthdate }}</p>
+<hr>
+
+<h4>Biography:</h4>
+<p>{{ director.biography }}</p>
+<hr>
+
+<h4>Movies</h4>
+<ul>
+    {% for movie in director.movie_set.all %}
+        <li>{{movie}} - <a href="/movie/{{movie.id}}">Show more</a></li>
+    {% empty %}
+        <li>Empty list</li>
+    {% endfor %}
+</ul>
+<hr>
+
+{% endblock %}
